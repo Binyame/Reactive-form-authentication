@@ -1,0 +1,18 @@
+<nav class="headline-container">
+  <h1>Reactive Form Demo</h1>
+  <h2>Angular EDE Bench Grooming and PoC <span class="projectno">Project Three</span></h2>
+</nav>
+<div class="elevated">
+  <main>
+    <div *ngFor="let sku of skuArr;let i = index;last as isLast">
+      <p *ngIf="isLast">You submitted a value of <span>{{ sku.sku }}</span> and the data record ID is <span>{{ sku.id }}</span>.</p>
+    </div>
+    <div>
+      <h3>Submission History</h3>
+      <app-submit-list *ngFor="let sku of skuArr;let i = index" [id]="sku.id" [sku]="sku.sku"></app-submit-list>
+    </div>
+  </main>
+  <!--<p>You submitted a value of {{ skuArr | json }}</p>-->
+</div>
+
+

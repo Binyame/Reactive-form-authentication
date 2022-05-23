@@ -1,0 +1,20 @@
+<nav class="headline-container">
+  <h1>Reactive Form A11Y Demo</h1>
+  <h2>Angular EDE Bench Grooming and PoC <span class="projectno">Project Three</span></h2>
+</nav>
+<div class="elevated">
+  <main>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
+      <fieldset [attr.aria-atomic]="true" aria-live="polite">
+        <label for="skuInput">
+          Enter the item SKU.
+          <span class="fielderror" #firstinputalert></span>
+          <span class="fielderror" #secondinputalert></span>
+        </label>
+        <input type="text" id="skuInput" formControlName="sku" [ngClass]="{bordered: sku?.hasError('invalidSku') && (sku?.dirty || sku?.touched)}" />
+        <div class="fielderror forminvalid" #formalert></div>
+      </fieldset>
+      <button type="submit" class="submitBtn" [disabled]="!myForm.valid">Submit</button>
+    </form>
+  </main>
+</div>

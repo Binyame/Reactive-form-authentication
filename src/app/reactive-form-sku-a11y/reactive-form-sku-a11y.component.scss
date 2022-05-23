@@ -1,0 +1,20 @@
+form {
+  background: #615638;
+  margin-top: 1.5em;
+
+  label {
+    color: #fff;
+  }
+
+  input {
+    width: 100%;
+    padding: .5em;
+    margin-top: .5em;
+  }
+
+  .bordered {
+    outline: 1px dashed #000;
+    outline-offset: -6px;
+    background-color: #eee;
+  }
+}
